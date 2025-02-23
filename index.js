@@ -2,7 +2,7 @@ import express from 'express';
 import authRoutes from './routes/auth.js';
 import carRoutes from './routes/cars.js';
 import dotenv from 'dotenv';
-import { connect } from './db/connection.js';
+import { connect } from './db/rent.js';
 
 dotenv.config();
 const app = express();

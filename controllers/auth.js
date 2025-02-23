@@ -1,4 +1,4 @@
-import { db } from '../db/connection.js';
+import { db } from '../db/rent.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { ObjectId } from 'mongodb';

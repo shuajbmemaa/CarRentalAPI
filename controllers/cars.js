@@ -1,4 +1,4 @@
-import { db } from '../db/connection.js';
+import { db } from '../db/rent.js';
 import { validateCarFilters, validateCreateCar } from '../utils/validation.js';
 
 export const getRentalCars = async (req, res) => {
