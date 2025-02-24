@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import { verifyToken } from '../utils/authHelper.js';
 
 export const auth = (req, res, next) => {
     try {
@@ -8,7 +8,7 @@ export const auth = (req, res, next) => {
             throw new Error('Authentication required');
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = verifyToken(token);
         req.userId = decoded.userId;
         next();
     } catch (error) {
