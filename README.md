@@ -17,8 +17,8 @@ The application follows a **modular architecture** to ensure separation of conce
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/shuajbmemaa/RestApiProject.git
-cd RestApiProject
+git clone https://github.com/shuajbmemaa/CarRentalAPI.git
+cd CarRentalAPI
 ```
 
 ### 2. Install Dependencies
