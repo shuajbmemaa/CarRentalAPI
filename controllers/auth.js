@@ -13,6 +13,9 @@ export const register = async (req, res) => {
         await registerUser(req.body);
         res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
+        if (error.message === 'This username is already in use. Please try another username.') {
+            return res.status(409).json({ error: error.message });
+        }
         res.status(500).json({ error: error.message });
     }
 };

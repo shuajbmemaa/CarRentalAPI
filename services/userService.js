@@ -5,6 +5,12 @@ import { generateToken } from '../utils/authHelper.js';
 const COLLECTION = 'users';
 
 export const registerUser = async ({ fullName, email, username, password }) => {
+    const existingUser = await genericRepository.findOne(COLLECTION, { username });
+
+    if (existingUser) {
+        throw new Error("This username is already in use. Please try another username.")
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     return await genericRepository.create(COLLECTION, { fullName, email, username, password: hashedPassword });
 };
